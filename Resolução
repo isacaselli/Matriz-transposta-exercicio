@@ -1,9 +1,9 @@
 def cria_matriz(m,n):     
     matriz = []    
     
-    for j in range(m):       #a qtd de elementos da lista MATRIZ será a qtd de linhas
+    for j in range(m):       
         linha_matriz = []
-        for i in range(n):   #a qtd de elementos da lista LINHAS será a qtd de colunas
+        for i in range(n):  
             a = int(input())
             linha_matriz.append(a)
         matriz.append(linha_matriz)
