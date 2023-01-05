@@ -1,0 +1,53 @@
+def cria_matriz(m,n):     
+    matriz = []    
+    
+    for j in range(m):       #a qtd de elementos da lista MATRIZ será a qtd de linhas
+        linha_matriz = []
+        for i in range(n):   #a qtd de elementos da lista LINHAS será a qtd de colunas
+            a = int(input())
+            linha_matriz.append(a)
+        matriz.append(linha_matriz)
+        
+    return matriz # m x n
+
+def matriz_nula(m,n):
+    matriz = []    
+    
+    for j in range(n):      
+        linha_matriz = []
+        for i in range(m):  
+            a = 0
+            linha_matriz.append(a)
+        matriz.append(linha_matriz)
+        
+    return matriz # n x m
+
+def matriz_transposta(A,At,m,n):
+    i = 0
+    k = 0
+    
+    while i < m and k < m:
+        j = 0
+        l = 0
+        while j < n and l < n:   #percorre: colunas A, linhas At     
+            At[l][k] = A[i][j] 
+            j += 1
+            l += 1
+        i += 1
+        k += 1
+        
+    comp = len(At)    
+    for a in range(comp):   
+        linha = At[a]
+        print(linha)
+
+            
+def main():
+    m = int(input()) #linha
+    n = int(input()) #coluna
+    
+    A = cria_matriz(m, n)
+    At = matriz_nula(m, n)
+    matriz_transposta(A, At, m, n)
+        
+main()
